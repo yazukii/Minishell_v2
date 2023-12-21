@@ -14,5 +14,6 @@
 
 int	parsing()
 {
-	printf("")
+	printf("parse\n");
+	return (0);
 }

@@ -16,7 +16,8 @@ int	main(void)
 {
 	t_parse *parse;
 
-	init_parse(*parse);
+	parse = NULL;
+	parse = init_parse(parse);
 	rl_initialize();
 	while(1)
 	{

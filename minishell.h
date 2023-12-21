@@ -46,6 +46,6 @@ typedef struct s_parse
 	struct s_parse	*next;
 }	t_parse;
 
-void	init_parse(t_parse parse);
+t_parse	*init_parse(t_parse *parse);
 
 #endif

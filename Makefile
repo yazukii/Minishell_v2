@@ -5,15 +5,15 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 
 SRCS =	./main.c \
-		./parsing \
-		./init_parse
+		./parsing.c \
+		./init_parse.c
 
 LIBFT = libft.a
 LIBFT_DIR = ./libft
 LIBS = -lreadline -L$(HOME)/.brew/opt/readline/lib
 OBJS_DIR = ./objs
 INC_DIR1 =	./headers
-INC_DIR2 = ./libft/includes
+INC_DIR2 = ./libft
 READLINE_DIR = $(HOME)/.brew/opt/readline/include
 
 SRCS_DIR =	srcs \
