@@ -47,5 +47,6 @@ typedef struct s_parse
 }	t_parse;
 
 t_parse	*init_parse(t_parse *parse);
+int		parsing(t_parse *parse);
 
 #endif

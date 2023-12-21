@@ -16,13 +16,15 @@ int	main(void)
 {
 	t_parse *parse;
 
-	parse = NULL;
+	parse = malloc(sizeof(t_parse));
 	parse = init_parse(parse);
 	rl_initialize();
 	while(1)
 	{
 		parse->args = readline(BLU"minishell$ "RESET);
-		printf("%s\n", parse->args);
+		add_history(parse->args);
+		parsing(parse);
+		//printf("%s\n", parse->args);
 	}
 	return (0);
 }
