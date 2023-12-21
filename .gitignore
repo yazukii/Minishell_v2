@@ -1,5 +1,7 @@
 # Prerequisites
 *.d
+cmake-build-debug
+CMakeLists.txt
 
 # Object files
 *.o
