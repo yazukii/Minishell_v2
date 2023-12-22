@@ -18,6 +18,11 @@ void	parse_add_new(t_parse *parse, char *cont)
 	t_parse *tmp;
 
 	tmp = parse;
+	if (!tmp->args)
+	{
+		tmp->args = cont;
+		return;
+	}
 	while (tmp->next)
 		tmp = tmp->next;
 	next = malloc(sizeof(t_parse));
@@ -39,24 +44,24 @@ void	print_list(t_parse *parse)
 	}
 }
 
-int sep_cmd(t_parse *parse)
+int sep_cmd(t_parse *parse, char *input)
 {
 	char **final;
 	int i = 0;
 
-	final = ft_split(parse->args, '|');
+	final = ft_split(input, '|');
 	while (final[i])
 	{
 		parse_add_new(parse, ft_strtrim(final[i], " "));
 		i++;
 	}
-	print_list(parse);
 	return (0);
 }
 
 
-int	parsing(t_parse *parse)
+int	parsing(t_parse *parse, char *input)
 {
-	sep_cmd(parse);
+	sep_cmd(parse, input);
+	parse_redir(parse);
 	return (0);
 }

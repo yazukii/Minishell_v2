@@ -12,18 +12,27 @@
 
 #include "../minishell.h"
 
+void	free_all(t_parse *parse, char *input)
+{
+	free(input);
+	free(parse->args);
+	free(parse);
+}
+
 int	main(void)
 {
-	t_parse *parse;
+	t_parse	*parse;
+	char	*input;
 
-	parse = malloc(sizeof(t_parse));
-	parse = init_parse(parse);
 	rl_initialize();
 	while(1)
 	{
-		parse->args = readline(BLU"minishell$ "RESET);
-		add_history(parse->args);
-		parsing(parse);
+		parse = malloc(sizeof(t_parse));
+		parse = init_parse(parse);
+		input = readline(BLU"minishell$ "RESET);
+		add_history(input);
+		parsing(parse, input);
+		free_all(parse, input);
 		//printf("%s\n", parse->args);
 	}
 	return (0);

@@ -17,10 +17,10 @@ t_parse	*init_parse(t_parse *parse)
 	parse->args = NULL;
 	parse->cmd = NULL;
 	parse->del = NULL;
+	parse->out = NULL;
+	parse->in = NULL;
 	parse->heredoc = 0;
 	parse->cat = 0;
-	parse->out = 0;
-	parse->in = 0;
 	parse->next = NULL;
 	return (parse);
 }

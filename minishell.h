@@ -39,14 +39,19 @@ typedef struct s_parse
 	char			*args;
 	char			*cmd;
 	char			*del;
+	char			*out;
+	char			*in;
 	int				heredoc;
 	int				cat;
-	int				out;
-	int				in;
 	struct s_parse	*next;
 }	t_parse;
 
 t_parse	*init_parse(t_parse *parse);
-int		parsing(t_parse *parse);
+int		parsing(t_parse *parse, char *input);
+void	parse_redir(t_parse *parse);
+void	heredoc(t_parse *parse, int s);
+void	in(t_parse *parse, int s);
+void	out(t_parse *parse, int s);
+void	cat_out(t_parse *parse, int s);
 
 #endif

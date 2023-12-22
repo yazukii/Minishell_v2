@@ -6,7 +6,9 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 SRCS =	./main.c \
 		./parsing.c \
-		./init_parse.c
+		./init_parse.c \
+		./parse_redir.c \
+		./parse_redir_utils.c
 
 LIBFT = libft.a
 LIBFT_DIR = ./libft
